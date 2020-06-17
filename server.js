@@ -36,11 +36,12 @@ app.get('/all', (req, res) => {
 });
 
 //POST Route
-app.post('/add', (req, res) => {
-    const newData = {
+app.post('/add', addData); 
+function addData (req, res) {
+    const newEntry = {
         temperature: req.body.temperature,
         date: req.body.date,
         userResponse: req.body.userResponse,
-    }
-    projectData.push(newData);
-});
+    };
+    projectData.push(newEntry);
+}
