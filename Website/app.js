@@ -41,12 +41,12 @@ const updateUI = async() => {
     console.log ('UpdateUI request ', request);
     try{
         const allData = await request.json();
-        document.getElementById('date').innerHTML = "Today is " + allData[allData.length-1].date;
-        document.getElementById('temp').innerHTML = "It's " + allData[allData.length-1].temperature.toFixed() + 'F';
-        document.getElementById('content').innerHTML = "You're feeling " + allData[allData.length-1].userResponse;
+        document.getElementById('date').innerHTML = "Today is, " + allData.date;
+        document.getElementById('temp').innerHTML = "It's " + allData.temperature.toFixed() + 'F';
+        document.getElementById('content').innerHTML = "You're feeling " + allData.userResponse;
     }
     catch(error){
-        console.log(error);
+        console.log("error", error);
     }
 };
 
